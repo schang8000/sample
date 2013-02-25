@@ -7,17 +7,18 @@ import urllib
 import hmac
 import json
 import hashlib
+from conf import Config
 from base64 import urlsafe_b64decode, urlsafe_b64encode
 
 import requests
 from flask import Flask, request, redirect, render_template, url_for
 
-FB_APP_ID = os.environ.get('FACEBOOK_APP_ID')
+FB_APP_ID = Config.FBAPI_APP_ID
 requests = requests.session()
 
 app_url = 'https://graph.facebook.com/{0}'.format(FB_APP_ID)
 FB_APP_NAME = json.loads(requests.get(app_url).content).get('name')
-FB_APP_SECRET = os.environ.get('FACEBOOK_SECRET')
+FB_APP_SECRET = Config.FBAPI_APP_SECRET 
 
 
 def oauth_login_url(preserve_path=True, next_url=None):
