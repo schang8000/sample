@@ -6,7 +6,7 @@ Python, designed for deployment to Heroku_.
 
 .. _Heroku: http://www.heroku.com/
 
-Run locally
+haha Run locally
 -----------
 
 Set up a Virtualenv and install dependencies::
